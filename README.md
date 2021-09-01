@@ -1,3 +1,4 @@
+
 ### Opa, tudo bom?
 ### Meu nome é Cleberson Saller e eu sou um jovem no mundo da TI!
 
@@ -14,8 +15,10 @@ Tenho conhecimentos também em JavaScript/NodeJS que eu usei pra fazer aplicaç�
 ### Gerenciamentos de código que uso:
 <img alt="Git" src="https://img.shields.io/badge/git%20-%23F05033.svg?&style=for-the-badge&logo=git&logoColor=white"/> <img alt="GitLab" src="https://img.shields.io/badge/gitlab%20-%23181717.svg?&style=for-the-badge&logo=gitlab&logoColor=white"/> <img alt="GitHub" src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/>
 
+### Containers e Orquestradores
+<img alt="Docker" src="https://img.shields.io/badge/docker%20-%232496ED.svg?&style=for-the-badge&logo=docker&logoColor=white"/> <img alt="Kubernetes" src="https://img.shields.io/badge/kubernetes%20-%233069DE.svg?&style=for-the-badge&logo=kubernetes&logoColor=white"/>
+
 ### Sistemas Operacionais preferidos:
 <img alt="Windows 10" src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white" /> <img alt="Android" src="https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white" /> <img alt="Ubuntu" src="https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white" />
-
 
 ###### **1- Arquivamento de Canais:** Não há um método para se arquivar canais no Discord, então o que é feito é a remoção da permissão para todos visualizarem aqueles canais, desse modo os canais continuam lá, apenas *invisíveis*.
