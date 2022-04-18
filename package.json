@@ -1,12 +1,11 @@
 {
   "name": "portfolio",
   "version": "1.0.0",
-  "main": "index.js",
   "author": "Cleberson Saller <cleberson600@gmail.com>",
   "license": "MIT",
   "scripts": {
     "start": "parcel ./src/*.html --host 0.0.0.0",
-    "build": "parcel build"
+    "build": "parcel build src/index.html"
   },
   "dependencies": {
     "@parcel/transformer-sass": "^2.4.1",
