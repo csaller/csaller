@@ -1,0 +1,117 @@
+@import 'variables';
+
+body {
+  background-color: $mainColor;
+  font-family: $font;
+  max-width: $maxWidth;
+  color: white;
+  margin: 0 auto;
+  padding: 0 20px 20px 20px;
+
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.nobreak {
+  white-space: nowrap;
+}
+
+p {
+  margin: 0;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+
+  p {
+    font-size: 24px;
+  }
+}
+
+main {
+  #about-me {
+    @media (max-width: $maxWidth) {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    display: flex;
+    gap: 40px;
+    padding: 20px;
+    background-color: #005180;
+
+    img {
+      width: 100%;
+      max-width: 400px;
+      max-height: 531px
+    }
+
+    #text {
+      width: 100%;
+
+      p {
+        margin-bottom: 15px;
+
+        &:first-child {
+          font-size: 32px;
+          margin-bottom: 20px;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  @media (max-width: $maxWidth) {
+    flex-direction: column;
+
+    #footer-text {
+      padding: 0 0 10px 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    a {
+      padding: 10px 3vw;
+
+      &:first-child {
+        padding: 10px 3vw 10px 0px;
+      }
+
+      &:last-child {
+        padding: 10px 0 10px 3vw;
+      }
+
+    }
+
+    #footer-links {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+    }
+  }
+
+  display: flex;
+  padding: 20px 0;
+  align-items: center;
+  justify-content: space-between;
+
+  a {
+    padding: 10px 3vw;
+
+    &:last-child {
+      padding: 10px 0 10px 3vw;
+    }
+  }
+}
