@@ -6,3 +6,6 @@
 /medium                 https://medium.com/@csaller
 /coffee                 https://www.buymeacoffee.com/csaller
 /email                  mailto:contato@csaller.com
+
+# Boilerplates scripts
+/boilerplates/node      https://raw.githubusercontent.com/cSaller/boilerplates/main/node/install.sh
