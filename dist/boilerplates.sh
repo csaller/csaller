@@ -12,6 +12,7 @@ cd $PROJECT_NAME
 
 git init
 bash ./init.sh
+rm -f init.sh
 git add . > /dev/null
 git commit -m 'Initial release' > /dev/null
 code -n .
