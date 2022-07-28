@@ -11,11 +11,7 @@ mv $BOILERPLATE_TYPE $PROJECT_NAME
 cd $PROJECT_NAME
 
 git init
-mv .env.example .env
+bash ./init.sh
 git add . > /dev/null
 git commit -m 'Initial release' > /dev/null
-docker compose up -d
-yarn
-yarn db:update > /dev/null
-yarn db:seed
 code -n .
