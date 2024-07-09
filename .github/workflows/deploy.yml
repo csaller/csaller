@@ -19,7 +19,7 @@ jobs:
 
       - name: Set current timestamp
         id: date
-        run: echo "::set-output name=date::$(date +%FT%T%Z)"
+        run: echo "::set-output name=date::$(date +%FT%T%Z | sed 's/:/-/g')"
 
       - name: Use Node.js 20
         uses: actions/setup-node@v4
