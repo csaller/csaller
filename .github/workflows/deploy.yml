@@ -17,10 +17,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set current timestamp
-        id: date
-        run: echo "::set-output name=date::$(date +%FT%T%Z | sed 's/:/-/g')"
-
       - name: Use Node.js 20
         uses: actions/setup-node@v4
         with:
@@ -37,7 +33,6 @@ jobs:
         id: generate_artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          name: ${{ steps.date.outputs.date }}
           path: dist/
 
 
@@ -53,5 +48,3 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
-        with:
-          artifact_name: ${{ needs.build.outputs.artifact_name }}
