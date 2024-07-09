@@ -1,0 +1,54 @@
+name: Github Pages deploy
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    outputs:
+      artifact_name: ${{ steps.generate_artifact.outputs.artifact_id }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set current timestamp
+        id: date
+        run: echo "::set-output name=date::$(date +%FT%T%Z)"
+
+      - name: Use Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'lts'
+          cache: 'yarn'
+
+      - name: Build static files
+        run: yarn build
+
+      - name: Generate artifact
+        id: generate_artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          name: ${{ steps.date.outputs.date }}
+          path: dist/
+
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
+        with:
+          artifact_name: ${{ needs.build.outputs.artifact_name }}
