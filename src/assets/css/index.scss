@@ -362,13 +362,11 @@ img {
     font-size: 0.875rem;
   }
 
-  .tag-cursor {
-    width: 8px;
-    height: 16px;
-    background: var(--accent-primary);
-    animation: cursor-blink 1s step-end infinite;
-    margin-left: var(--space-sm);
-  }
+}
+.tag-cursor {
+  width: 8px;
+  height: 16px;
+  animation: cursor-blink 1s step-end infinite;
 }
 
 .hero-title {

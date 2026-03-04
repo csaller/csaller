@@ -117,7 +117,7 @@
   // Start typing after initial delay
   setTimeout(() => {
     if (typingElement) {
-      typingElement.textContent = '_';
+      typingElement.textContent = '';
       setTimeout(typeCommand, 1000);
     }
   }, 2000);
