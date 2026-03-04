@@ -1,24 +1,39 @@
+# Cleberson Saller
 
-### Opa, tudo bom?
-### Meu nome é Cleberson Saller e eu sou um jovem no mundo da TI!
+**Infrastructure & Cloud Engineer**
 
-Atualmente atuo na parte de Infraestrutura/DevOps com _Infrastructure as Code (IaC)_ usando Terraform e provisionando basicamente tudo em AWS. Tenho conhecimento também em Google Cloud e Heroku, usando eles mais pra testes e projetos pessoais mas também com algumas pequenas coisas do trabalho nelas também.
+AWS Certified Solutions Architect Professional with 5+ years designing, automating, and scaling cloud infrastructures. I help teams ship faster and more reliably through solid CI/CD pipelines, Infrastructure as Code, and resilient platform architecture.
 
-Tenho conhecimentos também em JavaScript/NodeJS que eu usei pra fazer aplicações que otimizam o trabalho da equipe da Rede Nevercraft, uma rede de servidores de Minecraft que tenho com alguns amigos. Essas aplicações vão desde conversores simples de texto para JSON até Bots para Discord que integram o site onde as pessoas podem se voluntariar para ajudar com o servidor do Discord, fazendo a inclusão dessas pessoas no servidor, notificação e gerenciamento de aceites, gerenciamento de cargos para controle de acesso e arquivamento de canais¹ 
+---
 
-### Linguagens que conheço:
-<img alt="Terraform" src="https://img.shields.io/badge/terraform%20-%235835CC.svg?&style=for-the-badge&logo=terraform&logoColor=white"/> <img alt="NodeJS" src="https://img.shields.io/badge/node.js%20-%2343853D.svg?&style=for-the-badge&logo=node.js&logoColor=white"/> <img alt="JavaScript" src="https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"/> <img alt="Shell Script" src="https://img.shields.io/badge/shell_script%20-%23121011.svg?&style=for-the-badge&logo=gnu-bash&logoColor=white"/>  
+### Cloud & Infrastructure
 
-### Cloud providers que uso:
-<img alt="AWS" src="https://img.shields.io/badge/AWS%20-%23FF9900.svg?&style=for-the-badge&logo=amazon-aws&logoColor=white"/> <img alt="Google Cloud" src="https://img.shields.io/badge/Google%20Cloud%20-%234285F4.svg?&style=for-the-badge&logo=google-cloud&logoColor=white"/> <img alt="Heroku" src="https://img.shields.io/badge/heroku%20-%23430098.svg?&style=for-the-badge&logo=heroku&logoColor=white"/>
+![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white)
+![Kubernetes](https://img.shields.io/badge/Kubernetes-%23326CE5.svg?style=for-the-badge&logo=kubernetes&logoColor=white)
+![Terraform](https://img.shields.io/badge/Terraform-%235835CC.svg?style=for-the-badge&logo=terraform&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-%232496ED.svg?style=for-the-badge&logo=docker&logoColor=white)
 
-### Gerenciamentos de código que uso:
-<img alt="Git" src="https://img.shields.io/badge/git%20-%23F05033.svg?&style=for-the-badge&logo=git&logoColor=white"/> <img alt="GitLab" src="https://img.shields.io/badge/gitlab%20-%23181717.svg?&style=for-the-badge&logo=gitlab&logoColor=white"/> <img alt="GitHub" src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/>
+### DevOps & CI/CD
 
-### Containers e Orquestradores
-<img alt="Docker" src="https://img.shields.io/badge/docker%20-%232496ED.svg?&style=for-the-badge&logo=docker&logoColor=white"/> <img alt="Kubernetes" src="https://img.shields.io/badge/kubernetes%20-%233069DE.svg?&style=for-the-badge&logo=kubernetes&logoColor=white"/>
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white)
+![GitLab CI](https://img.shields.io/badge/GitLab_CI-%23FC6D26.svg?style=for-the-badge&logo=gitlab&logoColor=white)
+![Azure DevOps](https://img.shields.io/badge/Azure_DevOps-%230078D7.svg?style=for-the-badge&logo=azuredevops&logoColor=white)
+![CircleCI](https://img.shields.io/badge/CircleCI-%23343434.svg?style=for-the-badge&logo=circleci&logoColor=white)
 
-### Sistemas Operacionais preferidos:
-<img alt="Windows 10" src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white" /> <img alt="Android" src="https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white" /> <img alt="Ubuntu" src="https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white" />
+### Development
 
-###### **1- Arquivamento de Canais:** Não há um método para se arquivar canais no Discord, então o que é feito é a remoção da permissão para todos visualizarem aqueles canais, desse modo os canais continuam lá, apenas *invisíveis*.
+![Go](https://img.shields.io/badge/Go-%2300ADD8.svg?style=for-the-badge&logo=go&logoColor=white)
+![Python](https://img.shields.io/badge/Python-%233776AB.svg?style=for-the-badge&logo=python&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-%2343853D.svg?style=for-the-badge&logo=node.js&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-%23336791.svg?style=for-the-badge&logo=postgresql&logoColor=white)
+
+---
+
+### Certifications
+
+- **AWS Solutions Architect – Professional** · Amazon Web Services
+- **EF SET English Certificate C2 Proficient** · 77/100
+
+---
+
+[csaller.com](https://csaller.com) · [linkedin.com/in/clebersonsaller](https://linkedin.com/in/clebersonsaller) · hello@csaller.com
