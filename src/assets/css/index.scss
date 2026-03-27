@@ -58,7 +58,9 @@
 // ============================================
 // RESET & BASE
 // ============================================
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -67,6 +69,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 100px;
+  overflow-x: hidden;
 }
 
 body {
@@ -103,7 +106,12 @@ body {
 // ============================================
 // TYPOGRAPHY
 // ============================================
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-display);
   font-weight: 700;
   line-height: 1.1;
@@ -206,7 +214,8 @@ img {
       margin-right: 2px;
     }
 
-    &:hover, &.active {
+    &:hover,
+    &.active {
       color: var(--accent-primary);
     }
 
@@ -221,7 +230,8 @@ img {
       transition: width var(--transition-base);
     }
 
-    &:hover::after, &.active::after {
+    &:hover::after,
+    &.active::after {
       width: 100%;
     }
   }
@@ -248,7 +258,7 @@ img {
     transition: var(--transition-base);
   }
 
-  &[aria-expanded="true"] {
+  &[aria-expanded='true'] {
     span:nth-child(1) {
       transform: translateY(7px) rotate(45deg);
     }
@@ -277,7 +287,7 @@ img {
   visibility: hidden;
   transition: var(--transition-base);
 
-  &[aria-hidden="false"] {
+  &[aria-hidden='false'] {
     opacity: 1;
     visibility: visible;
   }
@@ -311,9 +321,16 @@ img {
   justify-content: center;
   position: relative;
   padding-top: 80px;
-  background:
-    radial-gradient(ellipse at 20% 50%, rgba(0, 255, 136, 0.05) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 80%, rgba(0, 200, 100, 0.03) 0%, transparent 40%),
+  background: radial-gradient(
+      ellipse at 20% 50%,
+      rgba(0, 255, 136, 0.05) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 80% 80%,
+      rgba(0, 200, 100, 0.03) 0%,
+      transparent 40%
+    ),
     var(--bg-primary);
 
   @media (max-width: 768px) {
@@ -335,6 +352,10 @@ img {
     grid-template-columns: 1fr;
     text-align: center;
     padding: var(--space-lg);
+  }
+
+  @media (max-width: 480px) {
+    padding: var(--space-lg) var(--space-md);
   }
 }
 
@@ -361,7 +382,6 @@ img {
     color: var(--text-secondary);
     font-size: 0.875rem;
   }
-
 }
 .tag-cursor {
   width: 8px;
@@ -370,7 +390,7 @@ img {
 }
 
 .hero-title {
-  font-size: clamp(3rem, 8vw, 6rem);
+  font-size: clamp(2rem, 8vw, 6rem);
   font-weight: 800;
   margin-bottom: var(--space-lg);
   line-height: 1;
@@ -387,7 +407,7 @@ img {
       transform: translateY(100%);
 
       @for $i from 0 through 5 {
-        &[data-delay="#{$i}"] {
+        &[data-delay='#{$i}'] {
           animation-delay: #{$i * 0.1 + 0.2}s;
         }
       }
@@ -485,9 +505,7 @@ img {
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-color);
   overflow: hidden;
-  box-shadow:
-    0 0 0 1px rgba(0, 0, 0, 0.3),
-    0 20px 50px rgba(0, 0, 0, 0.4),
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3), 0 20px 50px rgba(0, 0, 0, 0.4),
     0 0 100px rgba(0, 255, 136, 0.05);
 }
 
@@ -504,9 +522,15 @@ img {
     height: 12px;
     border-radius: 50%;
 
-    &.red { background: #ff5f57; }
-    &.yellow { background: #febc2e; }
-    &.green { background: #28c840; }
+    &.red {
+      background: #ff5f57;
+    }
+    &.yellow {
+      background: #febc2e;
+    }
+    &.green {
+      background: #28c840;
+    }
   }
 
   .terminal-title {
@@ -625,8 +649,11 @@ img {
 // ============================================
 .about {
   padding: var(--space-2xl) 0;
-  background:
-    linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+  background: linear-gradient(
+    180deg,
+    var(--bg-primary) 0%,
+    var(--bg-secondary) 100%
+  );
 }
 
 .about-content {
@@ -717,9 +744,7 @@ img {
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-color);
   overflow: hidden;
-  box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.3),
-    0 0 60px rgba(0, 255, 136, 0.03);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 60px rgba(0, 255, 136, 0.03);
 }
 
 .code-header {
@@ -747,9 +772,15 @@ img {
   overflow-x: auto;
 
   code {
-    .key { color: var(--accent-primary); }
-    .string { color: #ffd866; }
-    .punctuation { color: var(--text-muted); }
+    .key {
+      color: var(--accent-primary);
+    }
+    .string {
+      color: #ffd866;
+    }
+    .punctuation {
+      color: var(--text-muted);
+    }
   }
 }
 
@@ -790,7 +821,12 @@ img {
     left: 0;
     right: 0;
     height: 2px;
-    background: linear-gradient(90deg, transparent, var(--accent-primary), transparent);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      var(--accent-primary),
+      transparent
+    );
     opacity: 0;
     transition: opacity var(--transition-base);
   }
@@ -1137,7 +1173,11 @@ img {
     top: 0;
     bottom: 0;
     width: 2px;
-    background: linear-gradient(180deg, var(--accent-primary), var(--border-color));
+    background: linear-gradient(
+      180deg,
+      var(--accent-primary),
+      var(--border-color)
+    );
 
     @media (max-width: 768px) {
       left: 20px;
@@ -1409,7 +1449,8 @@ img {
 
 // Keyframes for pulse animation
 @keyframes pulse {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0.5;
     transform: scale(1);
   }
@@ -1440,8 +1481,11 @@ img {
 // ============================================
 .contact {
   padding: var(--space-2xl) 0;
-  background:
-    radial-gradient(ellipse at 50% 100%, rgba(0, 255, 136, 0.05) 0%, transparent 50%),
+  background: radial-gradient(
+      ellipse at 50% 100%,
+      rgba(0, 255, 136, 0.05) 0%,
+      transparent 50%
+    ),
     var(--bg-secondary);
 }
 
@@ -1620,18 +1664,33 @@ img {
 }
 
 @keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
 
 @keyframes cursor-blink {
-  0%, 100% { background: var(--accent-primary); }
-  50% { background: transparent; }
+  0%,
+  100% {
+    background: var(--accent-primary);
+  }
+  50% {
+    background: transparent;
+  }
 }
 
 @keyframes scrollPulse {
-  0%, 100% { opacity: 0.3; }
-  50% { opacity: 1; }
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
 }
 
 // Intersection Observer Animation Classes
