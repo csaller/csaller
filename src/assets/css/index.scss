@@ -80,7 +80,6 @@ body {
   background-color: var(--bg-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
 }
 
 ::selection {
@@ -668,6 +667,15 @@ img {
 
 .about-text {
   animation: fadeSlideUp 0.6s ease forwards;
+  overflow-wrap: break-word;
+  min-width: 0;
+}
+
+.about-visual {
+  animation: fadeSlideUp 0.6s ease 0.2s forwards;
+  opacity: 0;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .about-intro {
@@ -734,16 +742,12 @@ img {
 }
 
 // Code Block
-.about-visual {
-  animation: fadeSlideUp 0.6s ease 0.2s forwards;
-  opacity: 0;
-}
-
 .code-block {
   background: var(--bg-card);
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-color);
   overflow: hidden;
+  max-width: 100%;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 60px rgba(0, 255, 136, 0.03);
 }
 
@@ -770,6 +774,8 @@ img {
   font-size: 0.875rem;
   line-height: 1.8;
   overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
 
   code {
     .key {
