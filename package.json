@@ -1,14 +1,14 @@
 {
   "name": "portfolio",
   "version": "1.0.0",
-  "author": "Cleberson Saller <cleberson600@gmail.com>",
+  "author": "Cleberson Saller <hello@csaller.com>",
   "license": "MIT",
   "scripts": {
-    "start": "parcel ./src/*.html --host 0.0.0.0",
-    "build": "parcel build src/index.html"
+    "dev": "vite --host",
+    "build": "vite build"
   },
-  "dependencies": {
-    "parcel": "2.12.0",
-    "@parcel/transformer-sass": "2.12.0"
+  "devDependencies": {
+    "vite": "^5.0.0",
+    "sass": "^1.70.0"
   }
 }

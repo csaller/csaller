@@ -1,9 +1,4 @@
-/**
- * CLEBERSON SALLER PORTFOLIO
- * Terminal Noir - Interactive Scripts
- */
-
-(function() {
+(function () {
   'use strict';
 
   // ============================================
@@ -34,13 +29,12 @@
   // SMOOTH SCROLL FOR NAVIGATION
   // ============================================
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
+    anchor.addEventListener('click', function (e) {
       e.preventDefault();
       const target = document.querySelector(this.getAttribute('href'));
       if (target) {
         target.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
+          behavior: 'smooth', block: 'start'
         });
       }
     });
@@ -50,12 +44,10 @@
   // INTERSECTION OBSERVER FOR ANIMATIONS
   // ============================================
   const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.1
+    root: null, rootMargin: '0px', threshold: 0.1
   };
 
-  const animationCallback = (entries, observer) => {
+  const animationCallback = (entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('is-visible');
@@ -75,13 +67,7 @@
   // TYPING EFFECT FOR TERMINAL
   // ============================================
   const typingElement = document.querySelector('.terminal-line .typing');
-  const commands = [
-    'make impact',
-    'build --scale',
-    'deploy --prod',
-    'git commit -m "ship it"',
-    'terraform apply'
-  ];
+  const commands = ['make impact', 'build --scale', 'deploy --prod', 'git commit -m "ship it"', 'terraform apply'];
   let commandIndex = 0;
   let charIndex = 0;
   let isDeleting = false;
@@ -148,9 +134,7 @@
   window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
 
-    nav.style.background = currentScroll > 50
-      ? 'rgba(10, 10, 15, 0.95)'
-      : 'rgba(10, 10, 15, 0.8)';
+    nav.style.background = currentScroll > 50 ? 'rgba(10, 10, 15, 0.95)' : 'rgba(10, 10, 15, 0.8)';
 
     updateActiveNavLink();
   });
