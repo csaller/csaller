@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Budget Builder — [CS]</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/icons/favicon-32x32.png">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="assets/budget.scss"/>
+</head>
+<body>
+
+<!-- ── App Nav ── -->
+<nav class="b-nav">
+  <a href="/" class="b-nav-logo" title="Back to portfolio">
+    <span class="bracket">[</span><span class="initials">CS</span><span class="bracket">]</span>
+  </a>
+  <span class="b-nav-title">// budget_builder</span>
+  <button id="downloadBtn" class="b-nav-btn">⬇ Download PDF</button>
+</nav>
+
+<div class="b-app">
+
+  <!-- ══════════════════════════════════════════
+       FORM PANEL
+  ══════════════════════════════════════════ -->
+  <aside class="b-form" id="bForm">
+
+    <!-- 01 · Document -->
+    <div class="b-section">
+      <div class="b-section-hd">
+        <span class="b-sec-num">01</span>
+        <span class="b-sec-title">Document</span>
+      </div>
+      <div class="b-fields">
+        <div class="b-field">
+          <label class="b-label" for="f-ref">Reference #</label>
+          <input class="b-input" id="f-ref" type="text" placeholder="CS-2026-001"/>
+        </div>
+        <div class="b-field-row">
+          <div class="b-field">
+            <label class="b-label" for="f-issue">Issue date</label>
+            <input class="b-input" id="f-issue" type="date"/>
+          </div>
+          <div class="b-field">
+            <label class="b-label" for="f-valid">Valid until</label>
+            <input class="b-input" id="f-valid" type="date"/>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 02 · Client -->
+    <div class="b-section">
+      <div class="b-section-hd">
+        <span class="b-sec-num">02</span>
+        <span class="b-sec-title">Client</span>
+      </div>
+      <div class="b-fields">
+        <div class="b-field">
+          <label class="b-label" for="f-client-co">Company / Name</label>
+          <input class="b-input" id="f-client-co" type="text" placeholder="Acme Corp"/>
+        </div>
+        <div class="b-field">
+          <label class="b-label" for="f-client-ct">Contact person</label>
+          <input class="b-input" id="f-client-ct" type="text" placeholder="Jane Doe, CTO"/>
+        </div>
+        <div class="b-field">
+          <label class="b-label" for="f-client-em">Email</label>
+          <input class="b-input" id="f-client-em" type="email" placeholder="jane@acme.com"/>
+        </div>
+        <div class="b-field">
+          <label class="b-label" for="f-client-ad">Address</label>
+          <textarea class="b-input b-textarea" id="f-client-ad" rows="2" placeholder="123 Main St, City, Country"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- 03 · Project -->
+    <div class="b-section">
+      <div class="b-section-hd">
+        <span class="b-sec-num">03</span>
+        <span class="b-sec-title">Project</span>
+      </div>
+      <div class="b-fields">
+        <div class="b-field">
+          <label class="b-label" for="f-proj-name">Project name</label>
+          <input class="b-input" id="f-proj-name" type="text" placeholder="AWS Infrastructure Setup"/>
+        </div>
+        <div class="b-field-row">
+          <div class="b-field">
+            <label class="b-label" for="f-proj-dur">Duration</label>
+            <input class="b-input" id="f-proj-dur" type="text" placeholder="4 weeks"/>
+          </div>
+          <div class="b-field">
+            <label class="b-label" for="f-proj-start">Start date</label>
+            <input class="b-input" id="f-proj-start" type="text" placeholder="TBD"/>
+          </div>
+        </div>
+        <div class="b-field">
+          <label class="b-label" for="f-proj-del">Delivery model</label>
+          <input class="b-input" id="f-proj-del" type="text" placeholder="Remote · Async"/>
+        </div>
+        <div class="b-field">
+          <label class="b-label" for="f-proj-scope">Scope description</label>
+          <textarea class="b-input b-textarea" id="f-proj-scope" rows="4" placeholder="Describe the project scope..."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- 04 · Line Items -->
+    <div class="b-section">
+      <div class="b-section-hd">
+        <span class="b-sec-num">04</span>
+        <span class="b-sec-title">Line Items</span>
+      </div>
+      <div id="itemsContainer" class="b-items"></div>
+      <button id="addItemBtn" class="b-add-btn">+ Add item</button>
+    </div>
+
+    <!-- 05 · Adjustments -->
+    <div class="b-section">
+      <div class="b-section-hd">
+        <span class="b-sec-num">05</span>
+        <span class="b-sec-title">Adjustments</span>
+      </div>
+      <div class="b-fields">
+        <div class="b-field-row">
+          <div class="b-field">
+            <label class="b-label" for="f-discount">Discount %</label>
+            <input class="b-input" id="f-discount" type="number" min="0" max="100" step="0.5" value="0"/>
+          </div>
+          <div class="b-field">
+            <label class="b-label" for="f-tax">Tax %</label>
+            <input class="b-input" id="f-tax" type="number" min="0" max="100" step="0.5" value="0"/>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 06 · Payment Terms -->
+    <div class="b-section">
+      <div class="b-section-hd">
+        <span class="b-sec-num">06</span>
+        <span class="b-sec-title">Payment Terms</span>
+      </div>
+      <div class="b-fields">
+        <div class="b-field">
+          <label class="b-label" for="f-pay-sched">Schedule</label>
+          <textarea class="b-input b-textarea" id="f-pay-sched" rows="2"></textarea>
+        </div>
+        <div class="b-field">
+          <label class="b-label" for="f-pay-method">Method</label>
+          <textarea class="b-input b-textarea" id="f-pay-method" rows="2"></textarea>
+        </div>
+        <div class="b-field">
+          <label class="b-label" for="f-pay-curr">Currency</label>
+          <textarea class="b-input b-textarea" id="f-pay-curr" rows="2"></textarea>
+        </div>
+        <div class="b-field">
+          <label class="b-label" for="f-pay-late">Late payment</label>
+          <textarea class="b-input b-textarea" id="f-pay-late" rows="2"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- 07 · Notes -->
+    <div class="b-section">
+      <div class="b-section-hd">
+        <span class="b-sec-num">07</span>
+        <span class="b-sec-title">Notes</span>
+      </div>
+      <div class="b-fields">
+        <div class="b-field">
+          <textarea class="b-input b-textarea" id="f-notes" rows="5"></textarea>
+        </div>
+      </div>
+    </div>
+
+  </aside><!-- /b-form -->
+
+  <!-- ══════════════════════════════════════════
+       PREVIEW PANEL
+  ══════════════════════════════════════════ -->
+  <div class="b-preview" id="bPreview">
+    <div class="doc-page" id="docPage">
+
+      <!-- Header -->
+      <header class="doc-header">
+        <div class="doc-brand">
+          <div class="doc-logo">
+            <span class="bracket">[</span><span class="initials">CS</span><span class="bracket">]</span>
+          </div>
+          <div class="doc-name">Cleberson Saller</div>
+          <div class="doc-role">Infrastructure &amp; Cloud Engineer</div>
+          <div class="doc-contacts">
+            <span class="doc-accent">hello@csaller.com</span>
+            <span>csaller.com</span>
+            <span>github.com/csaller</span>
+          </div>
+        </div>
+        <div class="doc-meta">
+          <div class="doc-title-text">Budget<br/><span class="doc-accent">Proposal</span></div>
+          <div class="doc-refs">
+            <div class="doc-ref-row"><strong>Ref #</strong>&nbsp;<span data-bind="ref"></span></div>
+            <div class="doc-ref-row"><strong>Issue date</strong>&nbsp;<span data-bind="issueDateFmt"></span></div>
+            <div class="doc-ref-row"><strong>Valid until</strong>&nbsp;<span data-bind="validUntilFmt"></span></div>
+          </div>
+        </div>
+      </header>
+
+      <div class="doc-stripe"></div>
+
+      <div class="doc-body">
+
+        <!-- 01 Parties -->
+        <section class="doc-section">
+          <div class="doc-section-hd">
+            <span class="doc-sec-num">01</span>
+            <h2 class="doc-sec-title">Parties</h2>
+            <div class="doc-sec-line"></div>
+          </div>
+          <div class="doc-parties">
+            <div class="doc-party from">
+              <div class="doc-party-type">From</div>
+              <div class="doc-party-name">Cleberson Saller</div>
+              <div class="doc-party-detail">
+                Infrastructure &amp; Cloud Engineer<br/>
+                hello@csaller.com<br/>
+                csaller.com
+              </div>
+            </div>
+            <div class="doc-party">
+              <div class="doc-party-type">To — Client</div>
+              <div class="doc-party-name" data-bind="clientCo"></div>
+              <div class="doc-party-detail">
+                <span data-bind="clientCt"></span><br/>
+                <span data-bind="clientEm"></span><br/>
+                <span data-bind="clientAd"></span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 02 Project Overview -->
+        <section class="doc-section">
+          <div class="doc-section-hd">
+            <span class="doc-sec-num">02</span>
+            <h2 class="doc-sec-title">Project Overview</h2>
+            <div class="doc-sec-line"></div>
+          </div>
+          <div class="doc-overview">
+            <div class="doc-ov-item">
+              <div class="doc-ov-key">Project name</div>
+              <div class="doc-ov-val" data-bind="projectName"></div>
+            </div>
+            <div class="doc-ov-item">
+              <div class="doc-ov-key">Estimated duration</div>
+              <div class="doc-ov-val" data-bind="duration"></div>
+            </div>
+            <div class="doc-ov-item">
+              <div class="doc-ov-key">Start date</div>
+              <div class="doc-ov-val" data-bind="startDate"></div>
+            </div>
+            <div class="doc-ov-item">
+              <div class="doc-ov-key">Delivery model</div>
+              <div class="doc-ov-val" data-bind="delivery"></div>
+            </div>
+            <div class="doc-ov-item doc-ov-full">
+              <div class="doc-ov-key">Scope description</div>
+              <div class="doc-ov-val doc-ov-scope" data-bind="scope"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 03 Budget -->
+        <section class="doc-section doc-section--budget">
+          <div class="doc-section-hd">
+            <span class="doc-sec-num">03</span>
+            <h2 class="doc-sec-title">Budget Breakdown</h2>
+            <div class="doc-sec-line"></div>
+          </div>
+          <table class="doc-table">
+            <thead>
+              <tr>
+                <th style="width:42%">Service / Deliverable</th>
+                <th style="width:17%">Qty / Hours</th>
+                <th style="width:18%">Unit Price</th>
+                <th style="width:23%">Total</th>
+              </tr>
+            </thead>
+            <tbody id="previewTableBody"></tbody>
+          </table>
+          <div class="doc-totals" id="previewTotals"></div>
+        </section>
+
+        <!-- 04 Payment Terms -->
+        <section class="doc-section">
+          <div class="doc-section-hd">
+            <span class="doc-sec-num">04</span>
+            <h2 class="doc-sec-title">Payment Terms</h2>
+            <div class="doc-sec-line"></div>
+          </div>
+          <div class="doc-terms">
+            <div class="doc-term">
+              <div class="doc-term-title">Payment schedule</div>
+              <div class="doc-term-body" data-bind="paySchedule"></div>
+            </div>
+            <div class="doc-term">
+              <div class="doc-term-title">Payment method</div>
+              <div class="doc-term-body" data-bind="payMethod"></div>
+            </div>
+            <div class="doc-term">
+              <div class="doc-term-title">Currency</div>
+              <div class="doc-term-body" data-bind="currency"></div>
+            </div>
+            <div class="doc-term">
+              <div class="doc-term-title">Late payment</div>
+              <div class="doc-term-body" data-bind="latePay"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 05 Notes -->
+        <section class="doc-section">
+          <div class="doc-section-hd">
+            <span class="doc-sec-num">05</span>
+            <h2 class="doc-sec-title">Additional Notes</h2>
+            <div class="doc-sec-line"></div>
+          </div>
+          <div class="doc-notes">
+            <div class="doc-notes-label">// notes</div>
+            <p data-bind="notes"></p>
+          </div>
+        </section>
+
+        <!-- 06 Agreement -->
+        <section class="doc-section">
+          <div class="doc-section-hd">
+            <span class="doc-sec-num">06</span>
+            <h2 class="doc-sec-title">Agreement</h2>
+            <div class="doc-sec-line"></div>
+          </div>
+          <p class="doc-sig-intro">By signing below, both parties agree to the scope, budget, and terms described in this document.</p>
+          <div class="doc-sigs">
+            <div class="doc-sig">
+              <div class="doc-sig-who">Service Provider</div>
+              <div class="doc-sig-line"></div>
+              <div class="doc-sig-name">Cleberson Saller</div>
+              <div class="doc-sig-role">Infrastructure &amp; Cloud Engineer</div>
+              <div class="doc-sig-date">Date: ____________________</div>
+            </div>
+            <div class="doc-sig">
+              <div class="doc-sig-who">Client</div>
+              <div class="doc-sig-line"></div>
+              <div class="doc-sig-name" data-bind="clientCo"></div>
+              <div class="doc-sig-role" data-bind="clientCt"></div>
+              <div class="doc-sig-date">Date: ____________________</div>
+            </div>
+          </div>
+        </section>
+
+      </div><!-- /doc-body -->
+
+      <footer class="doc-footer">
+        <div class="doc-footer-brand">
+          <span class="bracket">[</span><span class="initials">CS</span><span class="bracket">]</span>
+          &nbsp;Cleberson Saller
+        </div>
+        <div class="doc-footer-note">
+          hello@csaller.com · csaller.com · Ref&nbsp;<span data-bind="ref"></span>
+        </div>
+      </footer>
+
+    </div><!-- /doc-page -->
+  </div><!-- /b-preview -->
+
+</div><!-- /b-app -->
+
+<script type="module" src="assets/budget.js"></script>
+</body>
+</html>
