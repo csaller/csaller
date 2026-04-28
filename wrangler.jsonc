@@ -1,0 +1,24 @@
+{
+  "name": "portfolio",
+  "compatibility_date": "2026-04-28",
+  "observability": {
+    "enabled": true
+  },
+  "dev": {
+    "ip": "0.0.0.0"
+  },
+  "routes": [
+    {
+      "pattern": "csaller.com",
+      "zone_name": "csaller.com",
+      "custom_domain": true
+    }
+  ],
+  "build": {
+    "command": "bun run build",
+    "watch_dir": "dist"
+  },
+  "assets": {
+    "directory": "./dist"
+  }
+}
