@@ -6,8 +6,9 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
-        budget: resolve(__dirname, 'budget.html'),
-        budgetPtbr: resolve(__dirname, 'budget-ptbr.html'),
+        internalBudget: resolve(__dirname, 'internal/budget.html'),
+        internalBudgetPtbr: resolve(__dirname, 'internal/budget-ptbr.html'),
+        internalQr: resolve(__dirname, 'internal/qr.html'),
       },
     },
   },
