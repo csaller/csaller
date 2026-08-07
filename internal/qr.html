@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>QR Code Generator - [CS]</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32x32.png">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../assets/qr.scss"/>
+</head>
+<body>
+  <nav class="q-nav">
+    <a href="/" class="q-nav-logo" title="Back to portfolio">
+      <span class="bracket">[</span><span class="initials">CS</span><span class="bracket">]</span>
+    </a>
+    <span class="q-nav-title">// qr_code</span>
+    <button id="downloadBtn" class="q-nav-btn" disabled>Download PNG</button>
+  </nav>
+
+  <main class="q-app">
+    <section class="q-panel" aria-labelledby="qrTitle">
+      <div class="q-form">
+        <div class="q-section-hd">
+          <span class="q-sec-num">01</span>
+          <h1 id="qrTitle" class="q-sec-title">QR Code</h1>
+        </div>
+
+        <label class="q-label" for="qrInput">Input</label>
+        <textarea
+          id="qrInput"
+          class="q-input q-textarea"
+          rows="8"
+          autofocus
+          placeholder="Enter text or a URL"></textarea>
+
+        <div class="q-meta">
+          <span>PNG size</span>
+          <strong>1000 x 1000 px</strong>
+        </div>
+      </div>
+
+      <div class="q-preview" aria-live="polite">
+        <div class="q-canvas-wrap">
+          <canvas id="qrCanvas" class="q-canvas" width="1000" height="1000"></canvas>
+          <p id="emptyState" class="q-empty">Enter input to create a QR code.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="../assets/qr.js"></script>
+</body>
+</html>

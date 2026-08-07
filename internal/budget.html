@@ -1,175 +1,175 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Gerador de Orçamento — [CS]</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="./assets/icons/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/icons/favicon-32x32.png">
+  <title>Budget Builder — [CS]</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32x32.png">
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="assets/budget.scss"/>
+  <link rel="stylesheet" href="../assets/budget.scss"/>
 </head>
 <body>
 
 <!-- ── App Nav ── -->
 <nav class="b-nav">
-  <a href="/" class="b-nav-logo" title="Voltar ao portfólio">
+  <a href="/" class="b-nav-logo" title="Back to portfolio">
     <span class="bracket">[</span><span class="initials">CS</span><span class="bracket">]</span>
   </a>
-  <span class="b-nav-title">// gerador_de_orçamento</span>
-  <button id="downloadBtn" class="b-nav-btn">⬇ Baixar PDF</button>
+  <span class="b-nav-title">// budget_builder</span>
+  <button id="downloadBtn" class="b-nav-btn">⬇ Download PDF</button>
 </nav>
 
 <div class="b-app">
 
   <!-- ══════════════════════════════════════════
-       PAINEL DO FORMULÁRIO
+       FORM PANEL
   ══════════════════════════════════════════ -->
   <aside class="b-form" id="bForm">
 
-    <!-- 01 · Documento -->
+    <!-- 01 · Document -->
     <div class="b-section">
       <div class="b-section-hd">
         <span class="b-sec-num">01</span>
-        <span class="b-sec-title">Documento</span>
+        <span class="b-sec-title">Document</span>
       </div>
       <div class="b-fields">
         <div class="b-field">
-          <label class="b-label" for="f-ref">Número de referência</label>
+          <label class="b-label" for="f-ref">Reference #</label>
           <input class="b-input" id="f-ref" type="text" placeholder="CS-2026-001"/>
         </div>
         <div class="b-field-row">
           <div class="b-field">
-            <label class="b-label" for="f-issue">Data de emissão</label>
+            <label class="b-label" for="f-issue">Issue date</label>
             <input class="b-input" id="f-issue" type="date"/>
           </div>
           <div class="b-field">
-            <label class="b-label" for="f-valid">Válido até</label>
+            <label class="b-label" for="f-valid">Valid until</label>
             <input class="b-input" id="f-valid" type="date"/>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- 02 · Cliente -->
+    <!-- 02 · Client -->
     <div class="b-section">
       <div class="b-section-hd">
         <span class="b-sec-num">02</span>
-        <span class="b-sec-title">Cliente</span>
+        <span class="b-sec-title">Client</span>
       </div>
       <div class="b-fields">
         <div class="b-field">
-          <label class="b-label" for="f-client-co">Empresa / Nome</label>
-          <input class="b-input" id="f-client-co" type="text" placeholder="Empresa LTDA"/>
+          <label class="b-label" for="f-client-co">Company / Name</label>
+          <input class="b-input" id="f-client-co" type="text" placeholder="Acme Corp"/>
         </div>
         <div class="b-field">
-          <label class="b-label" for="f-client-ct">Pessoa de contato</label>
-          <input class="b-input" id="f-client-ct" type="text" placeholder="João Silva, CTO"/>
+          <label class="b-label" for="f-client-ct">Contact person</label>
+          <input class="b-input" id="f-client-ct" type="text" placeholder="Jane Doe, CTO"/>
         </div>
         <div class="b-field">
-          <label class="b-label" for="f-client-em">E-mail</label>
-          <input class="b-input" id="f-client-em" type="email" placeholder="joao@empresa.com.br"/>
+          <label class="b-label" for="f-client-em">Email</label>
+          <input class="b-input" id="f-client-em" type="email" placeholder="jane@acme.com"/>
         </div>
         <div class="b-field">
-          <label class="b-label" for="f-client-ad">Endereço</label>
-          <textarea class="b-input b-textarea" id="f-client-ad" rows="2" placeholder="Rua Exemplo, 123 — Cidade, Estado, Brasil"></textarea>
+          <label class="b-label" for="f-client-ad">Address</label>
+          <textarea class="b-input b-textarea" id="f-client-ad" rows="2" placeholder="123 Main St, City, Country"></textarea>
         </div>
       </div>
     </div>
 
-    <!-- 03 · Projeto -->
+    <!-- 03 · Project -->
     <div class="b-section">
       <div class="b-section-hd">
         <span class="b-sec-num">03</span>
-        <span class="b-sec-title">Projeto</span>
+        <span class="b-sec-title">Project</span>
       </div>
       <div class="b-fields">
         <div class="b-field">
-          <label class="b-label" for="f-proj-name">Nome do projeto</label>
-          <input class="b-input" id="f-proj-name" type="text" placeholder="Infraestrutura AWS"/>
+          <label class="b-label" for="f-proj-name">Project name</label>
+          <input class="b-input" id="f-proj-name" type="text" placeholder="AWS Infrastructure Setup"/>
         </div>
         <div class="b-field-row">
           <div class="b-field">
-            <label class="b-label" for="f-proj-dur">Duração estimada</label>
-            <input class="b-input" id="f-proj-dur" type="text" placeholder="4 semanas"/>
+            <label class="b-label" for="f-proj-dur">Duration</label>
+            <input class="b-input" id="f-proj-dur" type="text" placeholder="4 weeks"/>
           </div>
           <div class="b-field">
-            <label class="b-label" for="f-proj-start">Início previsto</label>
-            <input class="b-input" id="f-proj-start" type="text" placeholder="A definir"/>
+            <label class="b-label" for="f-proj-start">Start date</label>
+            <input class="b-input" id="f-proj-start" type="text" placeholder="TBD"/>
           </div>
         </div>
         <div class="b-field">
-          <label class="b-label" for="f-proj-del">Modelo de entrega</label>
-          <input class="b-input" id="f-proj-del" type="text" placeholder="Remoto · Assíncrono"/>
+          <label class="b-label" for="f-proj-del">Delivery model</label>
+          <input class="b-input" id="f-proj-del" type="text" placeholder="Remote · Async"/>
         </div>
         <div class="b-field">
-          <label class="b-label" for="f-proj-scope">Descrição do escopo</label>
-          <textarea class="b-input b-textarea" id="f-proj-scope" rows="4" placeholder="Descreva o escopo do projeto..."></textarea>
+          <label class="b-label" for="f-proj-scope">Scope description</label>
+          <textarea class="b-input b-textarea" id="f-proj-scope" rows="4" placeholder="Describe the project scope..."></textarea>
         </div>
       </div>
     </div>
 
-    <!-- 04 · Itens -->
+    <!-- 04 · Line Items -->
     <div class="b-section">
       <div class="b-section-hd">
         <span class="b-sec-num">04</span>
-        <span class="b-sec-title">Itens</span>
+        <span class="b-sec-title">Line Items</span>
       </div>
       <div id="itemsContainer" class="b-items"></div>
-      <button id="addItemBtn" class="b-add-btn">+ Adicionar item</button>
+      <button id="addItemBtn" class="b-add-btn">+ Add item</button>
     </div>
 
-    <!-- 05 · Ajustes -->
+    <!-- 05 · Adjustments -->
     <div class="b-section">
       <div class="b-section-hd">
         <span class="b-sec-num">05</span>
-        <span class="b-sec-title">Ajustes</span>
+        <span class="b-sec-title">Adjustments</span>
       </div>
       <div class="b-fields">
         <div class="b-field-row">
           <div class="b-field">
-            <label class="b-label" for="f-discount">Desconto %</label>
+            <label class="b-label" for="f-discount">Discount %</label>
             <input class="b-input" id="f-discount" type="number" min="0" max="100" step="0.5" value="0"/>
           </div>
           <div class="b-field">
-            <label class="b-label" for="f-tax">Impostos %</label>
+            <label class="b-label" for="f-tax">Tax %</label>
             <input class="b-input" id="f-tax" type="number" min="0" max="100" step="0.5" value="0"/>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- 06 · Condições de Pagamento -->
+    <!-- 06 · Payment Terms -->
     <div class="b-section">
       <div class="b-section-hd">
         <span class="b-sec-num">06</span>
-        <span class="b-sec-title">Condições de Pagamento</span>
+        <span class="b-sec-title">Payment Terms</span>
       </div>
       <div class="b-fields">
         <div class="b-field">
-          <label class="b-label" for="f-pay-sched">Cronograma</label>
+          <label class="b-label" for="f-pay-sched">Schedule</label>
           <textarea class="b-input b-textarea" id="f-pay-sched" rows="2"></textarea>
         </div>
         <div class="b-field">
-          <label class="b-label" for="f-pay-method">Método</label>
+          <label class="b-label" for="f-pay-method">Method</label>
           <textarea class="b-input b-textarea" id="f-pay-method" rows="2"></textarea>
         </div>
         <div class="b-field">
-          <label class="b-label" for="f-pay-curr">Moeda</label>
+          <label class="b-label" for="f-pay-curr">Currency</label>
           <textarea class="b-input b-textarea" id="f-pay-curr" rows="2"></textarea>
         </div>
         <div class="b-field">
-          <label class="b-label" for="f-pay-late">Atraso no pagamento</label>
+          <label class="b-label" for="f-pay-late">Late payment</label>
           <textarea class="b-input b-textarea" id="f-pay-late" rows="2"></textarea>
         </div>
       </div>
     </div>
 
-    <!-- 07 · Observações -->
+    <!-- 07 · Notes -->
     <div class="b-section">
       <div class="b-section-hd">
         <span class="b-sec-num">07</span>
-        <span class="b-sec-title">Observações</span>
+        <span class="b-sec-title">Notes</span>
       </div>
       <div class="b-fields">
         <div class="b-field">
@@ -181,19 +181,19 @@
   </aside><!-- /b-form -->
 
   <!-- ══════════════════════════════════════════
-       PAINEL DE VISUALIZAÇÃO
+       PREVIEW PANEL
   ══════════════════════════════════════════ -->
   <div class="b-preview" id="bPreview">
     <div class="doc-page" id="docPage">
 
-      <!-- Cabeçalho -->
+      <!-- Header -->
       <header class="doc-header">
         <div class="doc-brand">
           <div class="doc-logo">
             <span class="bracket">[</span><span class="initials">CS</span><span class="bracket">]</span>
           </div>
           <div class="doc-name">Cleberson Saller</div>
-          <div class="doc-role">Engenheiro de Infraestrutura &amp; Cloud</div>
+          <div class="doc-role">Infrastructure &amp; Cloud Engineer</div>
           <div class="doc-contacts">
             <span class="doc-accent">hello@csaller.com</span>
             <span>csaller.com</span>
@@ -201,11 +201,11 @@
           </div>
         </div>
         <div class="doc-meta">
-          <div class="doc-title-text">Proposta de<br/><span class="doc-accent">Orçamento</span></div>
+          <div class="doc-title-text">Budget<br/><span class="doc-accent">Proposal</span></div>
           <div class="doc-refs">
             <div class="doc-ref-row"><strong>Ref #</strong>&nbsp;<span data-bind="ref"></span></div>
-            <div class="doc-ref-row"><strong>Data de emissão</strong>&nbsp;<span data-bind="issueDateFmt"></span></div>
-            <div class="doc-ref-row"><strong>Válido até</strong>&nbsp;<span data-bind="validUntilFmt"></span></div>
+            <div class="doc-ref-row"><strong>Issue date</strong>&nbsp;<span data-bind="issueDateFmt"></span></div>
+            <div class="doc-ref-row"><strong>Valid until</strong>&nbsp;<span data-bind="validUntilFmt"></span></div>
           </div>
         </div>
       </header>
@@ -214,25 +214,25 @@
 
       <div class="doc-body">
 
-        <!-- 01 Partes -->
+        <!-- 01 Parties -->
         <section class="doc-section">
           <div class="doc-section-hd">
             <span class="doc-sec-num">01</span>
-            <h2 class="doc-sec-title">Partes</h2>
+            <h2 class="doc-sec-title">Parties</h2>
             <div class="doc-sec-line"></div>
           </div>
           <div class="doc-parties">
             <div class="doc-party from">
-              <div class="doc-party-type">De</div>
+              <div class="doc-party-type">From</div>
               <div class="doc-party-name">Cleberson Saller</div>
               <div class="doc-party-detail">
-                Engenheiro de Infraestrutura &amp; Cloud<br/>
+                Infrastructure &amp; Cloud Engineer<br/>
                 hello@csaller.com<br/>
                 csaller.com
               </div>
             </div>
             <div class="doc-party">
-              <div class="doc-party-type">Para — Cliente</div>
+              <div class="doc-party-type">To — Client</div>
               <div class="doc-party-name" data-bind="clientCo"></div>
               <div class="doc-party-detail">
                 <span data-bind="clientCt"></span><br/>
@@ -243,50 +243,50 @@
           </div>
         </section>
 
-        <!-- 02 Visão Geral do Projeto -->
+        <!-- 02 Project Overview -->
         <section class="doc-section">
           <div class="doc-section-hd">
             <span class="doc-sec-num">02</span>
-            <h2 class="doc-sec-title">Visão Geral do Projeto</h2>
+            <h2 class="doc-sec-title">Project Overview</h2>
             <div class="doc-sec-line"></div>
           </div>
           <div class="doc-overview">
             <div class="doc-ov-item">
-              <div class="doc-ov-key">Nome do projeto</div>
+              <div class="doc-ov-key">Project name</div>
               <div class="doc-ov-val" data-bind="projectName"></div>
             </div>
             <div class="doc-ov-item">
-              <div class="doc-ov-key">Duração estimada</div>
+              <div class="doc-ov-key">Estimated duration</div>
               <div class="doc-ov-val" data-bind="duration"></div>
             </div>
             <div class="doc-ov-item">
-              <div class="doc-ov-key">Início previsto</div>
+              <div class="doc-ov-key">Start date</div>
               <div class="doc-ov-val" data-bind="startDate"></div>
             </div>
             <div class="doc-ov-item">
-              <div class="doc-ov-key">Modelo de entrega</div>
+              <div class="doc-ov-key">Delivery model</div>
               <div class="doc-ov-val" data-bind="delivery"></div>
             </div>
             <div class="doc-ov-item doc-ov-full">
-              <div class="doc-ov-key">Descrição do escopo</div>
+              <div class="doc-ov-key">Scope description</div>
               <div class="doc-ov-val doc-ov-scope" data-bind="scope"></div>
             </div>
           </div>
         </section>
 
-        <!-- 03 Orçamento -->
+        <!-- 03 Budget -->
         <section class="doc-section doc-section--budget">
           <div class="doc-section-hd">
             <span class="doc-sec-num">03</span>
-            <h2 class="doc-sec-title">Detalhamento do Orçamento</h2>
+            <h2 class="doc-sec-title">Budget Breakdown</h2>
             <div class="doc-sec-line"></div>
           </div>
           <table class="doc-table">
             <thead>
               <tr>
-                <th style="width:42%">Serviço / Entregável</th>
-                <th style="width:17%">Qtd / Horas</th>
-                <th style="width:18%">Valor unitário</th>
+                <th style="width:42%">Service / Deliverable</th>
+                <th style="width:17%">Qty / Hours</th>
+                <th style="width:18%">Unit Price</th>
                 <th style="width:23%">Total</th>
               </tr>
             </thead>
@@ -295,68 +295,68 @@
           <div class="doc-totals" id="previewTotals"></div>
         </section>
 
-        <!-- 04 Condições de Pagamento -->
+        <!-- 04 Payment Terms -->
         <section class="doc-section">
           <div class="doc-section-hd">
             <span class="doc-sec-num">04</span>
-            <h2 class="doc-sec-title">Condições de Pagamento</h2>
+            <h2 class="doc-sec-title">Payment Terms</h2>
             <div class="doc-sec-line"></div>
           </div>
           <div class="doc-terms">
             <div class="doc-term">
-              <div class="doc-term-title">Cronograma de pagamento</div>
+              <div class="doc-term-title">Payment schedule</div>
               <div class="doc-term-body" data-bind="paySchedule"></div>
             </div>
             <div class="doc-term">
-              <div class="doc-term-title">Método de pagamento</div>
+              <div class="doc-term-title">Payment method</div>
               <div class="doc-term-body" data-bind="payMethod"></div>
             </div>
             <div class="doc-term">
-              <div class="doc-term-title">Moeda</div>
+              <div class="doc-term-title">Currency</div>
               <div class="doc-term-body" data-bind="currency"></div>
             </div>
             <div class="doc-term">
-              <div class="doc-term-title">Atraso no pagamento</div>
+              <div class="doc-term-title">Late payment</div>
               <div class="doc-term-body" data-bind="latePay"></div>
             </div>
           </div>
         </section>
 
-        <!-- 05 Observações -->
+        <!-- 05 Notes -->
         <section class="doc-section">
           <div class="doc-section-hd">
             <span class="doc-sec-num">05</span>
-            <h2 class="doc-sec-title">Observações</h2>
+            <h2 class="doc-sec-title">Additional Notes</h2>
             <div class="doc-sec-line"></div>
           </div>
           <div class="doc-notes">
-            <div class="doc-notes-label">// observações</div>
+            <div class="doc-notes-label">// notes</div>
             <p data-bind="notes"></p>
           </div>
         </section>
 
-        <!-- 06 Acordo -->
+        <!-- 06 Agreement -->
         <section class="doc-section">
           <div class="doc-section-hd">
             <span class="doc-sec-num">06</span>
-            <h2 class="doc-sec-title">Acordo</h2>
+            <h2 class="doc-sec-title">Agreement</h2>
             <div class="doc-sec-line"></div>
           </div>
-          <p class="doc-sig-intro">Ao assinar abaixo, ambas as partes concordam com o escopo, orçamento e condições descritos neste documento.</p>
+          <p class="doc-sig-intro">By signing below, both parties agree to the scope, budget, and terms described in this document.</p>
           <div class="doc-sigs">
             <div class="doc-sig">
-              <div class="doc-sig-who">Prestador de Serviços</div>
+              <div class="doc-sig-who">Service Provider</div>
               <div class="doc-sig-line"></div>
               <div class="doc-sig-name">Cleberson Saller</div>
-              <div class="doc-sig-role">Engenheiro de Infraestrutura &amp; Cloud</div>
-              <div class="doc-sig-date">Data: ____________________</div>
+              <div class="doc-sig-role">Infrastructure &amp; Cloud Engineer</div>
+              <div class="doc-sig-date">Date: ____________________</div>
             </div>
             <div class="doc-sig">
-              <div class="doc-sig-who">Cliente</div>
+              <div class="doc-sig-who">Client</div>
               <div class="doc-sig-line"></div>
               <div class="doc-sig-name" data-bind="clientCo"></div>
               <div class="doc-sig-role" data-bind="clientCt"></div>
-              <div class="doc-sig-date">Data: ____________________</div>
+              <div class="doc-sig-date">Date: ____________________</div>
             </div>
           </div>
         </section>
@@ -378,6 +378,6 @@
 
 </div><!-- /b-app -->
 
-<script type="module" src="assets/budget-ptbr.js"></script>
+<script type="module" src="../assets/budget.js"></script>
 </body>
 </html>
