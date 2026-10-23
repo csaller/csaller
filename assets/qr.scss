@@ -186,6 +186,33 @@ body {
   resize: vertical;
 }
 
+.q-radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  margin-top: 14px;
+  border: none;
+
+  .q-label {
+    width: 100%;
+    margin-bottom: 0;
+  }
+}
+
+.q-radio {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-secondary);
+  font-size: 0.72rem;
+  cursor: pointer;
+
+  input {
+    accent-color: var(--accent);
+    cursor: pointer;
+  }
+}
+
 .q-meta {
   display: flex;
   align-items: center;
